@@ -7,7 +7,7 @@ function toggleMode() {
 
     if(html.classList.contains('light')) {
         img.setAttribute('src', "./assets/avatar-light.png")
-        img.setAttribute('alt', "nova foto")
+        img.setAttribute('alt', "Foto tema light")
         
     }
     else {
