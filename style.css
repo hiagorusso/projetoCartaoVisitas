@@ -6,6 +6,7 @@ body{
     background-size: cover;*/
     
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
 
 }
 
@@ -21,7 +22,7 @@ body{
     --stroke-color: rgba(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.1);
     --surface-color-hover: rgba(0, 0, 0, 0.02);
-    --hightlight-color: rgba(255, 255, 255, 0.2);
+    --highlight-color: rgba(255, 255, 255, 0.2);
     --switch-bg-url: url(./assets/MoonStars.svg);
 
 }
@@ -40,6 +41,7 @@ body{
 body * {
     font-family: 'Inter', sans-serif;
     color: var(--text-color);
+    
 }
 
 #container {
@@ -89,12 +91,18 @@ body * {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+
+    animation: slide-back 0.5s;
         
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.5s forwards;
+   
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -208,4 +216,24 @@ footer a {
 
     }
 
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }    
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        lef:0;
+
+    }
+    
 }
